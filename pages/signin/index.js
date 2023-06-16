@@ -5,10 +5,20 @@ import {
     Container, 
     Input, 
     ButtonSubmit, 
+    ButtonSubmitRegistro,
     TextButton } from './styles'
 import Header from '../../components/Header';
+import { useNavigation } from '@react-navigation/native';
 
 function SignIn() {
+        
+        const navigation = useNavigation();
+      
+        const navigateToRegistro = () => {
+          navigation.navigate('SignUp');
+        }
+    
+
     return(
         <KeyboardView>
             <Header />
@@ -26,6 +36,9 @@ function SignIn() {
                 <ButtonSubmit>
                     <TextButton>Entrar</TextButton>
                 </ButtonSubmit>
+                <ButtonSubmitRegistro title="registrar" onPress={navigateToRegistro}>
+                    <TextButton>Não possuo login</TextButton>
+                </ButtonSubmitRegistro>
             </Container>
         </KeyboardView>
     )
