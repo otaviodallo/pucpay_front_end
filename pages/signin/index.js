@@ -7,7 +7,7 @@ import {
     ButtonSubmit, 
     ButtonSubmitRegistro,
     TextButton } from './styles'
-import Header from '../../components/Header';
+import Icon from '../../components/Icon';
 import { useNavigation } from '@react-navigation/native';
 
 function SignIn() {
@@ -21,7 +21,7 @@ function SignIn() {
 
     return(
         <KeyboardView>
-            <Header />
+            <Icon />
             <Container>  
                 <Title>Login</Title>
                 <Input 

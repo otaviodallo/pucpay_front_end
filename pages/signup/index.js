@@ -6,19 +6,19 @@ import {
     Input, 
     ButtonSubmit, 
     TextButton } from './styles'
-import Header from '../../components/Header';
+import Icon from '../../components/Icon';
 import { useNavigation } from '@react-navigation/native';
 
 function SignUp(){
-
     const navigation = useNavigation();
       
         const navigateToLogin = () => {
-          navigation.navigate('SignIn');
+          navigation.navigate('Home');
         }
+        
     return (
         <KeyboardView>
-            <Header />
+            <Icon />
             <Container>
                 <Title>Faça seu registro</Title>
                 <Input 

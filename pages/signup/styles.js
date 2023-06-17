@@ -17,7 +17,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
     color: #fff;
     font-size: 25px;
-    font-weight: 300;
+    font-weight: 800;
     margin-bottom: 15px;
 `
 export const Input = styled.TextInput`
