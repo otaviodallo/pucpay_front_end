@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, StatusBar,Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, StatusBar, Image, Touchable } from 'react-native';
 import Header from '../../components/Header'
-
-
 import { AntDesign, FontAwesome } from '@expo/vector-icons'
+
+
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
 function Home() {
@@ -23,12 +23,46 @@ function Home() {
                 </TouchableOpacity>
             </View>
             <View name="Restaurant" style={styles.restaurantCard}>
-                <Image 
-                style={styles.restaurantImage}
-                source={require('../thedripper.png')}
-                resizeMode="contain"
-                />
-                <Text marginLeft={5}>The Dripper</Text>
+                <TouchableOpacity style={styles.restaurant}>
+                    <Image
+                        style={styles.restaurantImage}
+                        source={require('../starbuckslogo.jpg')}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
+                    <Text marginLeft={5}>Starbucks</Text>
+            </View>
+            <View style={styles.infoDrinks}>
+                <Text style={styles.infoDrink}>Comidas populares</Text>
+                <TouchableOpacity>
+                    <Text style={styles.infoTodosDrink}>Ver todos</Text>
+                </TouchableOpacity>
+            </View>
+            <View name="Drink" style={styles.drinkCard}>
+                <TouchableOpacity>
+                    <Image
+                        style={styles.restaurantImage}
+                        source={require('../coffe.jpg')}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
+                    <Text marginLeft={5}>Café 350ml</Text>
+            </View>
+            <View style={styles.infoFoods}>
+                <Text style={styles.infoFood}>Comidas populares</Text>
+                <TouchableOpacity>
+                    <Text style={styles.infoTodosFood}>Ver todos</Text>
+                </TouchableOpacity>
+            </View>
+            <View name="Drink" style={styles.foodCard}>
+                <TouchableOpacity>
+                    <Image
+                        style={styles.restaurantImage}
+                        source={require('../coffe.jpg')}
+                        resizeMode="contain"
+                    />
+                </TouchableOpacity>
+                    <Text marginLeft={5}>Café 350ml</Text>
             </View>
         </View>
     );
@@ -82,15 +116,67 @@ const styles = StyleSheet.create({
     restaurantCard: {
         height: "10%",
         width: '20%',
-        borderRadius: 50,
-        marginLeft: 20
+        borderRadius: 40,
+        marginLeft: 20,
     },
     restaurantImage: {
         width: '100%',
         height: '100%',
         resizeMode: 'cover',
         borderRadius: 50
-      }
+    },
+    infoDrinks:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: "90%",
+        alignItems: 'center',
+        padding: 40,
+        gap: 100,
+        marginTop: 10
+    },
+    infoDrink:{
+        fontSize: 18,
+        marginLeft: 15,
+        color: 'grey',
+        fontWeight: 800
+    },
+    infoTodosDrink:{
+        marginLeft: 50,
+        marginRight: -30,
+        color: 'grey'
+    },
+    drinkCard: {
+        height: "10%",
+        width: '20%',
+        borderRadius: 40,
+        marginLeft: 20,
+    },
+    drinkImage: {
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
+        borderRadius: 50
+    },
+    infoFoods: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: "90%",
+        alignItems: 'center',
+        padding: 40,
+        gap: 100,
+        marginTop: 10
+    },
+    infoFood:{
+        fontSize: 18,
+        marginLeft: 15,
+        color: 'grey',
+        fontWeight: 800
+    },
+    infoTodosFoods:{
+        marginLeft: 50,
+        marginRight: -30,
+        color: 'grey'
+    },
 })
 
 export default Home;
