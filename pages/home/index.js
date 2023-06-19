@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, StatusBar, Image, Touchable } from 'react-native';
 import Header from '../../components/Header'
 import { AntDesign, FontAwesome } from '@expo/vector-icons'
-
-
-const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
+import { useNavigation } from '@react-navigation/native';
 
 function Home() {
     return (
@@ -33,7 +31,7 @@ function Home() {
                     <Text marginLeft={5}>Starbucks</Text>
             </View>
             <View style={styles.infoDrinks}>
-                <Text style={styles.infoDrink}>Comidas populares</Text>
+                <Text style={styles.infoDrink}>Bebidas populares</Text>
                 <TouchableOpacity>
                     <Text style={styles.infoTodosDrink}>Ver todos</Text>
                 </TouchableOpacity>
@@ -58,11 +56,11 @@ function Home() {
                 <TouchableOpacity>
                     <Image
                         style={styles.restaurantImage}
-                        source={require('../coffe.jpg')}
+                        source={require('../coxinha.jpg')}
                         resizeMode="contain"
                     />
                 </TouchableOpacity>
-                    <Text marginLeft={5}>Café 350ml</Text>
+                    <Text marginLeft={12} >Coxinha</Text>
             </View>
         </View>
     );
@@ -172,11 +170,17 @@ const styles = StyleSheet.create({
         color: 'grey',
         fontWeight: 800
     },
-    infoTodosFoods:{
+    infoTodosFood:{
         marginLeft: 50,
         marginRight: -30,
         color: 'grey'
     },
+    foodCard: {
+        height: "10%",
+        width: '20%',
+        borderRadius: 40,
+        marginLeft: 20,
+    }
 })
 
 export default Home;
