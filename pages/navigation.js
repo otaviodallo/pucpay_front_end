@@ -5,6 +5,7 @@ import SignIn from './signin';
 import SignUp from './signup'
 import Home from './home'
 import Profile from './profile'
+import RestaurantHome from './RestaurantHome';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ const Navigation = () => {
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }}/>
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
         <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
+        <Stack.Screen name="RestaurantHome" component={RestaurantHome} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

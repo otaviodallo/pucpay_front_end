@@ -2,8 +2,17 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity, StatusBar, Image, 
 import Header from '../../components/Header'
 import { AntDesign, FontAwesome } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
+import Footer from '../../components/Footer';
+
 
 function Home() {
+    const navigation = useNavigation()
+
+    const navigateToRestaurant = () => {
+        navigation.navigate('RestaurantHome')
+    }
+
+
     return (
         <View style={styles.container}>
             <Header name="Início" />
@@ -21,47 +30,52 @@ function Home() {
                 </TouchableOpacity>
             </View>
             <View name="Restaurant" style={styles.restaurantCard}>
-                <TouchableOpacity style={styles.restaurant}>
+                <TouchableOpacity style={styles.restaurant} onPress={navigateToRestaurant}>
                     <Image
                         style={styles.restaurantImage}
                         source={require('../starbuckslogo.jpg')}
                         resizeMode="contain"
                     />
                 </TouchableOpacity>
-                    <Text marginLeft={5}>Starbucks</Text>
+                <Text marginLeft={5}>Starbucks</Text>
             </View>
-            <View style={styles.infoDrinks}>
-                <Text style={styles.infoDrink}>Bebidas populares</Text>
-                <TouchableOpacity>
-                    <Text style={styles.infoTodosDrink}>Ver todos</Text>
-                </TouchableOpacity>
-            </View>
-            <View name="Drink" style={styles.drinkCard}>
-                <TouchableOpacity>
-                    <Image
-                        style={styles.restaurantImage}
-                        source={require('../coffe.jpg')}
-                        resizeMode="contain"
-                    />
-                </TouchableOpacity>
+            <View style={styles.drink}>
+                <View style={styles.infoDrinks}>
+                    <Text style={styles.infoDrink}>Bebidas populares</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.infoTodosDrink}>Ver todos</Text>
+                    </TouchableOpacity>
+                </View>
+                <View name="Drink" style={styles.drinkCard}>
+                    <TouchableOpacity>
+                        <Image
+                            style={styles.restaurantImage}
+                            source={require('../coffe.jpg')}
+                            resizeMode="contain"
+                        />
+                    </TouchableOpacity>
                     <Text marginLeft={5}>Café 350ml</Text>
+                </View>
             </View>
-            <View style={styles.infoFoods}>
-                <Text style={styles.infoFood}>Comidas populares</Text>
-                <TouchableOpacity>
-                    <Text style={styles.infoTodosFood}>Ver todos</Text>
-                </TouchableOpacity>
-            </View>
-            <View name="Drink" style={styles.foodCard}>
-                <TouchableOpacity>
-                    <Image
-                        style={styles.restaurantImage}
-                        source={require('../coxinha.jpg')}
-                        resizeMode="contain"
-                    />
-                </TouchableOpacity>
+            <View style={styles.food}>
+                <View style={styles.infoFoods}>
+                    <Text style={styles.infoFood}>Comidas populares</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.infoTodosFood}>Ver todos</Text>
+                    </TouchableOpacity>
+                </View>
+                <View name="Drink" style={styles.foodCard}>
+                    <TouchableOpacity>
+                        <Image
+                            style={styles.restaurantImage}
+                            source={require('../coxinha.jpg')}
+                            resizeMode="contain"
+                        />
+                    </TouchableOpacity>
                     <Text marginLeft={12} >Coxinha</Text>
+                </View>
             </View>
+            <Footer />
         </View>
     );
 };
@@ -88,7 +102,7 @@ const styles = StyleSheet.create({
     inputSearch: {
         width: "70%",
         borderRadius: 15,
-        borderWidth: 2,
+        borderWidth: 1.5,
         height: 50,
         borderColor: 'grey'
     },
@@ -116,6 +130,7 @@ const styles = StyleSheet.create({
         width: '20%',
         borderRadius: 40,
         marginLeft: 20,
+        marginTop: -20
     },
     restaurantImage: {
         width: '100%',
@@ -123,31 +138,31 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         borderRadius: 50
     },
-    infoDrinks:{
+    infoDrinks: {
         flexDirection: 'row',
         justifyContent: 'center',
         width: "90%",
         alignItems: 'center',
         padding: 40,
-        gap: 100,
-        marginTop: 10
+        gap: 100
     },
-    infoDrink:{
+    infoDrink: {
         fontSize: 18,
         marginLeft: 15,
         color: 'grey',
         fontWeight: 800
     },
-    infoTodosDrink:{
+    infoTodosDrink: {
         marginLeft: 50,
         marginRight: -30,
         color: 'grey'
     },
     drinkCard: {
-        height: "10%",
+        height: "40%",
         width: '20%',
         borderRadius: 40,
         marginLeft: 20,
+        marginTop: -20
     },
     drinkImage: {
         width: '100%',
@@ -164,22 +179,30 @@ const styles = StyleSheet.create({
         gap: 100,
         marginTop: 10
     },
-    infoFood:{
+    infoFood: {
         fontSize: 18,
         marginLeft: 15,
         color: 'grey',
         fontWeight: 800
     },
-    infoTodosFood:{
+    infoTodosFood: {
         marginLeft: 50,
         marginRight: -30,
         color: 'grey'
     },
     foodCard: {
-        height: "10%",
+        height: "30%",
         width: '20%',
         borderRadius: 40,
         marginLeft: 20,
+        marginTop: -20
+    },
+    food: {
+        height: 235,
+        marginTop: -20
+    },
+    drink: {
+        height: 160
     }
 })
 

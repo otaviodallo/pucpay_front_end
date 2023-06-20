@@ -17,6 +17,7 @@ function SignIn() {
         const navigateToRegistro = () => {
           navigation.navigate('SignUp');
         }
+        
     return(
         <KeyboardView>
             <Icon />

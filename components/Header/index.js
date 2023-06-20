@@ -17,15 +17,14 @@ function Header({ name }) {
     const navigateToRegistro = () => {
       navigation.navigate('Profile');
     }
-
-
+    
     return (
     <>
         <View style={styles.container}>
             <View style={styles.content}>
                 <TouchableOpacity>
                     <Text style={styles.username}>{name}</Text>
-                    <AntDesign name="menuunfold" size={24} color="grey" marginTop={-23} marginLeft={20}/>
+                    <AntDesign name="menuunfold" size={24} color="grey" marginTop={-23} marginLeft={10}/>
                 </TouchableOpacity>
                 <TouchableOpacity activeOpacity={0.9} style={styles.buttonUser}>
                     <FontAwesome name="user-circle" size={30} color="grey" marginRight={13} onPress={navigateToRegistro}/>
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         color: 'grey',
         fontWeight: 'bold',
-        marginLeft: 55,
+        marginLeft: 41,
     },
 })
 
