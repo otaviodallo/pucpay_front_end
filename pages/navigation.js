@@ -6,6 +6,7 @@ import SignUp from './signup'
 import Home from './home'
 import Profile from './profile'
 import RestaurantHome from './RestaurantHome';
+import Cart from './cart';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ const Navigation = () => {
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }}/>
         <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
         <Stack.Screen name="RestaurantHome" component={RestaurantHome} options={{ headerShown: false }}/>
+        <Stack.Screen name="Cart" component={Cart} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

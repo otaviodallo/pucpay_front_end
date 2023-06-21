@@ -10,10 +10,14 @@ function Footer() {
         navigation.navigate('Home')
     }
 
+    const goToCart = () => {
+        navigation.navigate('Cart')
+    }
+
     return(
         <View style={styles.footer}>
             <TouchableOpacity onPress={goToHome}><AntDesign name="home" size={35} color="grey" /></TouchableOpacity>
-            <TouchableOpacity><AntDesign name="shoppingcart" size={35} color="grey" /></TouchableOpacity>
+            <TouchableOpacity><AntDesign onPress={goToCart} name="shoppingcart" size={35} color="grey" /></TouchableOpacity>
             <TouchableOpacity><Ionicons name="notifications-outline" size={35} color="grey" /></TouchableOpacity>
         </View>
     )

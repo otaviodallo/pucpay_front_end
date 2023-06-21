@@ -27,7 +27,7 @@ function Profile() {
                 <View style={styles.profile}>
                     <Image
                         style={styles.profileImage}
-                        source={require('../eu.jpg')}
+                        source={require('../eus.jpg')}
                         resizeMode="contain"
                     />
                     <View style={styles.names}>

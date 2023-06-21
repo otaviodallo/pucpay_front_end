@@ -14,6 +14,7 @@ function RestaurantHome() {
                         source={require('../starbuckslogo.jpg')}
                         resizeMode="contain"
                     />
+                    <Text>Starbucks</Text>
                 </View>
                 <View style={styles.infoDrinks}>
                     <Text style={styles.infoDrink}>Bebidas</Text>
@@ -33,7 +34,7 @@ function RestaurantHome() {
                 </View>
                 <View style={styles.food}>
                     <View style={styles.infoFoods}>
-                        <Text style={styles.infoFood}>Comidas populares</Text>
+                        <Text style={styles.infoFood}>Comidas</Text>
                         <TouchableOpacity>
                             <Text style={styles.infoTodosFood}>Ver todos</Text>
                         </TouchableOpacity>
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
         width: "90%",
         alignItems: 'center',
         padding: 40,
-        gap: 100,
+        gap: 165,
         marginTop: 10
     },
     infoFood: {
@@ -140,7 +141,7 @@ const styles = StyleSheet.create({
         marginTop: -20
     },
     food: {
-        height: 300,
+        height: 290,
         marginTop: -20,
     },
     promoCard: {
