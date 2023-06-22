@@ -3,7 +3,8 @@ import Header from '../../components/Header'
 import { AntDesign, FontAwesome } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
 import Footer from '../../components/Footer';
-
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Home() {
     const navigation = useNavigation()
@@ -11,17 +12,26 @@ function Home() {
     const navigateToRestaurant = () => {
         navigation.navigate('RestaurantHome')
     }
+    const [restaurant, setRestaurant] = useState([]);
 
+   const getRestaurants = async () => {
+    const {data} = await axios.get('http://localhost:3000/auth/adm/restaurants')
+    console.log(data);
+   }
+
+   getRestaurants()
 
     return (
         <View style={styles.container}>
             <Header name="Início" />
             <View style={styles.search}>
-                <TextInput style={styles.inputSearch} placeholder="Procurar Restaurante" marginRight={-15} />
-                <TouchableOpacity activeOpacity={0.9}>
-                    <AntDesign name="search1" size={45} color="white" marginLeft={4}
-                        backgroundColor='grey' borderWidth={2} />
-                </TouchableOpacity>
+                <TextInput style={styles.inputSearch} placeholder="Procurar Restaurante" marginRight={-15} name={restaurant.name} />
+                <View>
+                    <TouchableOpacity activeOpacity={0.9}>
+                        <AntDesign name="search1" size={45} color="white" marginLeft={4}
+                            backgroundColor='grey' borderWidth={2} />
+                    </TouchableOpacity>
+                </View>
             </View>
             <View style={styles.info}>
                 <Text style={styles.infoRestaurante}>Restaurantes populares</Text>
